@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Todo 🐩</title>
+</head>
+<body>
+  <form action="/" method="post">
+    <div id="myDIV" class="header">
+      <h2>My To Do List</h2>
+      <input type="text" name="work" id="myInput">
+      <button type="submit" class="addBtn">Add</button>
+    </div>
+  </form>
+  
+  <ul id="myUL">
+    <li>Hit the gym</li>
+    <li>Pay bills</li>
+    <li>Meet George</li>
+    <% docs.forEach(doc => { %>
+      <li>
+        <p><%= doc.work %></p>
+        <input type="hidden" name="id" value="<%= doc._id %>">
+        <a href="/<%= doc._id %>">Delete</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
